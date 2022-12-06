@@ -1,0 +1,30 @@
+from BDD.creando_bdd import create_connection
+
+
+def select_reserva(conn):
+    """
+    Query all rows in the tasks table
+    :param conn: the Connection object
+    :param table: table name
+    :return:
+    """
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM reserva")
+
+    rows = cur.fetchall()
+
+    return rows
+
+
+def main():
+    database = "Cinemark.db"
+
+    # create a database connection
+    conn = create_connection(database)
+    with conn:
+        pass
+
+
+if __name__ == '__main__':
+    # main()
+    pass
